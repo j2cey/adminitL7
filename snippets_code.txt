@@ -1,0 +1,4 @@
+git clone --depth=1 --branch=master https://github.com/CryDeTaan/Laravel_VUE_AdminLTE_Template.git .git_tmp && \
+cp -r .git_tmp/ . && \
+rm -rf .git* && \
+npm run dev

@@ -1,7 +1,8 @@
 <?php
 
-    use App\User;
-    use Illuminate\Database\Seeder;
+use App\Status;
+use App\User;
+use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
 {
@@ -15,7 +16,29 @@ class UserSeeder extends Seeder
         $user = User::create([
             'name' => 'rootdev',
             'email' => 'rootdev@adminit.com',
+            'is_local' => true,
+            'status_id' => Status::active()->first()->id,
             'password' => bcrypt('rootdevP@ssw0rd')
         ]);
+
+        /*$role = Role::create([
+            'name' => 'Admin',
+            'description' => 'Administrateur Principal du Système',
+        ]);
+
+        $permissions = Permission::pluck('id','id')->all();
+
+        $role->syncPermissions($permissions);
+
+        $user->assignRole([$role->id]);*/
+
+        // Création du Role default user
+        /*$role_default = Role::create([
+            'name' => 'Default User',
+            'description' => 'Utilisateur par défaut',
+            'state_id' => State::actif()->first()->id,
+        ]);
+        $permissions_default = Permission::whereIn('name', ['commande-list','commande-create','commande-edit'])->pluck('id','id')->all();
+        $role_default->syncPermissions($permissions_default);*/
     }
 }

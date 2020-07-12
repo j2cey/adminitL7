@@ -1,13 +1,16 @@
 <?php
 
+use App\Traits\BaseMigrationTrait;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateReportTrendsTable extends Migration
 {
-    public $table_name = 'users';
-    public $table_comment = 'user accounts of the system.';
+    use BaseMigrationTrait;
+
+    public $table_name = 'report_trends';
+    public $table_comment = 'List of report trends';
 
     /**
      * Run the migrations.
@@ -18,19 +21,13 @@ class CreateUsersTable extends Migration
     {
         Schema::create($this->table_name, function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
 
-            $table->string('image')->nullable()->comment('user avatar');
-
-            $table->boolean('is_local')->default(false)->comment('determine whether the account is local');
-            $table->boolean('is_ldap')->default(false)->comment('determine whether the account is ldap');
+            $table->string('code')->comment('code of trend');
+            $table->string('name')->comment('name of trend');
 
             $table->baseFields();
         });
+        $this->setTableComment($this->table_name, $this->table_comment);
     }
 
     /**

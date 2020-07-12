@@ -5,6 +5,6 @@
         Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; {{ now()->year }} AdminLTE.io</strong>. All rights reserved.
+    <strong>Copyright &copy; {{ now()->year }} Admin-IT</strong>. All rights reserved.
 
 </footer>

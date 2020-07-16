@@ -2,8 +2,6 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
 /**
  * Class ReportTrend
  * @package App
@@ -21,7 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Illuminate\Support\Carbon $created_at
  * @property \Illuminate\Support\Carbon $updated_at
  */
-class ReportTrend extends Model
+class ReportTrend extends BaseModel
 {
     protected $guarded = [];
 }

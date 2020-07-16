@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\BaseTrait;
+use Illuminate\Database\Eloquent\Model;
 
 class BaseModel extends Model
 {

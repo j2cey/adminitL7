@@ -2,8 +2,6 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
 /**
  * Class ReportField
  * @package App
@@ -25,7 +23,19 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Illuminate\Support\Carbon $created_at
  * @property \Illuminate\Support\Carbon $updated_at
  */
-class ReportField extends Model
+class ReportField extends BaseModel
 {
-    //
+    protected $guarded = [];
+
+    public function report() {
+        return $this->belongsTo('App\Report');
+    }
+
+    public function value_type() {
+        return $this->belongsTo('App\ReportValueType');
+    }
+
+    public function values() {
+        return $this->hasMany('App\ReportValue');
+    }
 }

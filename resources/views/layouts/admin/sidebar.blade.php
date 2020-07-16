@@ -37,6 +37,14 @@
                     </router-link>
                 </li>
 
+                <!-- New Sidebar Item -->
+                <li class="nav-item">
+                    <router-link tag="a" to="/reports" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>Reports</p>
+                    </router-link>
+                </li>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

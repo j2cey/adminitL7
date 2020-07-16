@@ -3,7 +3,7 @@
 namespace App;
 
 /**
- * Class ReportType
+ * Class ReportDimensionAccent
  * @package App
  *
  * @property integer $id
@@ -13,16 +13,14 @@ namespace App;
  * @property string|null $tags
  * @property integer|null $status_id
  *
- * @property string $name
+ * @property integer|null $report_dimension_id
  *
  * @property \Illuminate\Support\Carbon $created_at
  * @property \Illuminate\Support\Carbon $updated_at
  */
-class ReportType extends BaseModel
+class ReportDimensionAccent extends BaseModel
 {
-    protected $guarded = [];
-
-    public function reports() {
-        return $this->hasMany('App\Report');
+    public function report_dimension() {
+        return $this->belongsTo('App\ReportDimension');
     }
 }

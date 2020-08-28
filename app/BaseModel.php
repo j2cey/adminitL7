@@ -4,10 +4,11 @@ namespace App;
 
 use App\Traits\BaseTrait;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class BaseModel extends Model
 {
-    use BaseTrait;
+    use BaseTrait, LogsActivity;
 
     /**
      * @var string[] LogsActivity purpose

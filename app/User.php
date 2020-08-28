@@ -2,9 +2,10 @@
 
 namespace App;
 
+use Illuminate\Notifications\Notifiable;
+use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 use App\Traits\BaseTrait;
 
@@ -30,7 +31,7 @@ use App\Traits\BaseTrait;
  */
 class User extends Authenticatable
 {
-    use Notifiable, BaseTrait;
+    use Notifiable, LogsActivity, BaseTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -58,4 +59,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * @var string[] LogsActivity purpose
+     */
+    protected static $logAttributes = ['*'];
 }

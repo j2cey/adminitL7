@@ -12,7 +12,7 @@ let routes = [
     },
     {
         path: '/reports',
-        component: require('./views/reports').default
+        component: require('./views/reports/index').default
     }
 ];
 
